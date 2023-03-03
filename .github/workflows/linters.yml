@@ -17,7 +17,7 @@ jobs:
           node-version: "12.x"
       - name: Setup eslint
         run: |
-          npm install --save-dev eslint-plugin-react@latest eslint-config-standard-with-typescripint/eslint-plugin@^5.0.0 eslint@^8.0.1 eslint-plugin-import@^2.25.2 eslint-plugin-promise@^6.0.0 typescript@*
+          npm install
           [ -f .stylelintrc.json ]
       - name: ESlint Report
         run: npx eslint . --ext .ts,.tsx
