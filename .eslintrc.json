@@ -1,0 +1,29 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "standard-with-typescript"
+    ],
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json", // Add this line to specify the path to your tsconfig.json file
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "import",
+        "jsx-a11y",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/dot-notation": "error"
+    }
+}
