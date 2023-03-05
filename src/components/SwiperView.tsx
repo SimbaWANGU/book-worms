@@ -2,11 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, ImageBackground, StyleSheet, Pressable } from 'react-native'
 import { useFonts } from 'expo-font'
 import { Family1, Family2, Family3 } from '../constants/fonts'
-
-interface SwiperViewProps {
-  src: any
-  textArray?: string[]
-}
+import type { SwiperViewProps } from '../interfaces/Interface'
 
 const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element => {
   const [isPressed, setIsPressed] = useState(false)
