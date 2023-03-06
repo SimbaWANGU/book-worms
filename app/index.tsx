@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import Onboarding from './screens/Unauthenticated/Onboarding/Onboarding'
 import Home from './screens/Authenticated/Home/Home'
-import { useColorScheme } from 'react-native'
+import { Appearance, useColorScheme } from 'react-native'
 import useTheme from '../src/hooks/useTheme'
 
 const index = (): JSX.Element => {
@@ -12,6 +12,13 @@ const index = (): JSX.Element => {
 
   useEffect(() => {
     setTheme(colorScheme as string)
+
+    const subscription = Appearance.addChangeListener(({ colorScheme }) => {
+      setTheme(colorScheme as string)
+    })
+    return () => {
+      subscription.remove()
+    }
   }, [])
 
   return (
