@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { View, Text, ImageBackground, StyleSheet, Pressable } from 'react-native'
 import { useFonts } from 'expo-font'
+import { useRouter } from 'expo-router'
 import { Family1, Family2, Family3 } from '../constants/fonts'
 import type { SwiperViewProps } from '../interfaces/Interface'
 
 const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element => {
+  const router = useRouter()
   const [isPressed, setIsPressed] = useState(false)
   const [loaded, error] = useFonts({
     family1: Family1,
@@ -21,7 +23,7 @@ const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element 
   }
 
   const handleSignIn = (): void => {
-    console.log('signing in')
+    router.push('/screens/SignIn/SignIn')
   }
 
   if (!loaded || (error != null) || textArray === undefined) {

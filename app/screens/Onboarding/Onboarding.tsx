@@ -13,8 +13,8 @@ const Onboarding = (): JSX.Element => {
   return (
     <Swiper
       loop={false}
-      autoplay={true}
-      autoplayTimeout={10}
+      // autoplay={true}
+      // autoplayTimeout={10}
     >
       <SwiperView src={Image1} textArray={slideText.slideOne} />
       <SwiperView src={Image2} textArray={slideText.slideTwo}/>
