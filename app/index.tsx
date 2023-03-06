@@ -4,7 +4,7 @@ import Onboarding from './screens/Unauthenticated/Onboarding/Onboarding'
 import Home from './screens/Authenticated/Home/Home'
 
 const index = (): JSX.Element => {
-  const isAuthenticated = true
+  const isAuthenticated = false
   return (
     <>
       {(isAuthenticated)
