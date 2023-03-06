@@ -23,7 +23,7 @@ const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element 
   }
 
   const handleSignIn = (): void => {
-    router.push('/screens/SignIn/SignIn')
+    router.push('/screens/Unauthenticated/SignIn/SignIn')
   }
 
   if (!loaded || (error != null) || textArray === undefined) {
