@@ -1,7 +1,7 @@
 import React from 'react'
 import Swiper from 'react-native-swiper'
-import SwiperView from '../../components/SwiperView'
-import { Image1, Image2, Image3 } from '../../constants/images'
+import SwiperView from '../../../../src/components/SwiperView'
+import { Image1, Image2, Image3 } from '../../../../src/constants/images'
 
 const slideText = {
   slideOne: ['Hello, this is', 'Book Worms', 'Read books designed to entertain you and answer simple questions after finishing...'],

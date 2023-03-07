@@ -1,29 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { View, Text, ImageBackground, StyleSheet, Pressable } from 'react-native'
 import { useFonts } from 'expo-font'
 import { useRouter } from 'expo-router'
 import { Family1, Family2, Family3 } from '../constants/fonts'
 import type { SwiperViewProps } from '../interfaces/Interface'
+import useButtonPress from '../hooks/useButtonPress'
 
 const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element => {
   const router = useRouter()
-  const [isPressed, setIsPressed] = useState(false)
+  const [isPressed, setIsPressed] = useButtonPress(false)
   const [loaded, error] = useFonts({
     family1: Family1,
     family2: Family2,
     family3: Family3
   })
 
-  const handlePressIn = (): void => {
-    setIsPressed(true)
-  }
-
-  const handlePressOut = (): void => {
-    setIsPressed(false)
-  }
-
   const handleSignIn = (): void => {
-    router.push('/screens/SignIn/SignIn')
+    router.push('/screens/Unauthenticated/SignIn/SignIn')
   }
 
   if (!loaded || (error != null) || textArray === undefined) {
@@ -41,8 +34,8 @@ const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element 
         <Text style={[styles.text, styles.text3]}>{textArray[2]}</Text>
         <Pressable
           onPress={handleSignIn}
-          onPressIn={handlePressIn}
-          onPressOut={handlePressOut}
+          onPressIn={() => { setIsPressed(true) }}
+          onPressOut={() => { setIsPressed(false) }}
           style={[styles.button, isPressed && styles.pressablePressed]}>
             <Text style={styles.buttonText}>Sign In</Text>
         </Pressable>
