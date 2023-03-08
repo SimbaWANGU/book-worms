@@ -3,4 +3,10 @@ interface SwiperViewProps {
   textArray?: string[]
 }
 
-export type { SwiperViewProps }
+interface gridViewProps {
+  src: any
+  subHeading: string
+  gradientColor: string
+}
+
+export type { SwiperViewProps, gridViewProps }
