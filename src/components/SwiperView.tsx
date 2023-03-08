@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, ImageBackground, StyleSheet, Pressable } from 'react-native'
-import { useFonts } from 'expo-font'
 import { useRouter } from 'expo-router'
+import { useFonts } from 'expo-font'
 import { Family1, Family2, Family3 } from '../constants/fonts'
 import type { SwiperViewProps } from '../interfaces/Interface'
 import useButtonPress from '../hooks/useButtonPress'
@@ -36,8 +36,9 @@ const SwiperView: React.FC<SwiperViewProps> = ({ src, textArray }): JSX.Element 
           onPress={handleSignIn}
           onPressIn={() => { setIsPressed(true) }}
           onPressOut={() => { setIsPressed(false) }}
-          style={[styles.button, isPressed && styles.pressablePressed]}>
-            <Text style={styles.buttonText}>Sign In</Text>
+          style={[styles.button, (isPressed ? styles.pressablePressed : null)]}
+        >
+          <Text style={styles.buttonText}>Sign In</Text>
         </Pressable>
       </View>
     </ImageBackground>
