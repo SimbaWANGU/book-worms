@@ -8,9 +8,12 @@ import useButtonPress from '../../../../src/hooks/useButtonPress'
 import { Family1, Family2, Family3 } from '../../../../src/constants/fonts'
 import GridView from '../../../../src/components/GridView'
 import { posp } from '../../../../src/constants/images'
+import SideBar from '../../../../src/components/SideBar'
+import useSideBar from '../../../../src/hooks/useSideBar'
 
 const Home = (): JSX.Element => {
   const [isPressed, setIsPressed] = useButtonPress(false)
+  const [showSidebar] = useSideBar()
   const [loaded, error] = useFonts({
     family1: Family1,
     family2: Family2,
@@ -28,6 +31,7 @@ const Home = (): JSX.Element => {
   return (
     <>
       <Header />
+      {showSidebar ? <SideBar /> : null}
       <View style={styles.homeIntro}>
         <Text style={[styles.heading, { color: '#f0f0f0' }]}>Your First Read...</Text>
         <Text style={[styles.bookTitle, { color: '#f0f0f0' }]}>The Kid that Grew Up Too Fast</Text>
