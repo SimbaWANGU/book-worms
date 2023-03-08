@@ -39,7 +39,7 @@ export default SideBarPressable
 
 const styles = StyleSheet.create({
   button: {
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     marginTop: 20,
     padding: 15,
     backgroundColor: '#f0f0f0',
@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
   },
   buttonText: {
     lineHeight: 25,
     textAlign: 'center',
     fontSize: 20,
     fontFamily: 'family1'
-  },
+  }
 })

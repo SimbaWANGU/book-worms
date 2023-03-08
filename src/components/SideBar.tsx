@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import useButtonPress from '../hooks/useButtonPress'
 import useSideBar from '../hooks/useSideBar'
@@ -17,7 +17,7 @@ const SideBar = (): JSX.Element => {
         onPressOut={() => { setButtonPressed(false) }}
         style={[styles.button, isButtonPressed ? styles.pressablePressed : null]}
       >
-        <AntDesign name="arrowleft" size={24} color="black" />
+        <AntDesign name="arrowleft" size={18} color="black" />
       </Pressable>
       <View style={styles.navLinks}>
         <SideBarPressable to={'Home'} icon={'home'} />
@@ -32,15 +32,16 @@ export default SideBar
 const styles = StyleSheet.create({
   sidebar: {
     height: '100%',
-    width: '60%',
+    width: '70%',
     position: 'absolute',
     backgroundColor: 'blue',
     zIndex: 999,
-    opacity: 0.8
+    opacity: 0.9
   },
   button: {
     alignSelf: 'flex-end',
     margin: 20,
+    marginTop: 50,
     padding: 15,
     backgroundColor: '#f0f0f0',
     borderRadius: 50
@@ -50,6 +51,8 @@ const styles = StyleSheet.create({
   },
   navLinks: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    position: 'relative',
+    top: '25%'
   }
 })
