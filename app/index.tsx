@@ -6,7 +6,7 @@ import { Appearance, useColorScheme } from 'react-native'
 import useTheme from '../src/hooks/useTheme'
 
 const index = (): JSX.Element => {
-  const isAuthenticated = false
+  const isAuthenticated = true
   const [, setTheme] = useTheme()
   const colorScheme = useColorScheme()
 
