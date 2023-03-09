@@ -4,11 +4,7 @@ import { AntDesign } from '@expo/vector-icons'
 import useButtonPress from '../hooks/useButtonPress'
 import { useRouter } from 'expo-router'
 import useSideBar from '../hooks/useSideBar'
-
-interface sideBarButton {
-  to: string
-  icon: any
-}
+import type { sideBarButton } from '../interfaces/Interface'
 
 const SideBarPressable: React.FC<sideBarButton> = ({ to, icon }): JSX.Element => {
   const router = useRouter()
