@@ -10,7 +10,7 @@ const GenreFilter = (): JSX.Element => {
   }
 
   return (
-    <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.containerStyle} horizontal={true} showsHorizontalScrollIndicator={false}>
       <GenreFilterItem genre={'fantasy'} onPress={handleGenrePress} selected={selectedGenre === 'fantasy'} />
       <GenreFilterItem genre={'educational'} onPress={handleGenrePress} selected={selectedGenre === 'educational'} />
       <GenreFilterItem genre={'science fiction'} onPress={handleGenrePress} selected={selectedGenre === 'science fiction'} />
@@ -26,7 +26,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 10,
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    height: '6%'
+  },
+  containerStyle: {
+    justifyContent: 'center'
   }
 })
 
