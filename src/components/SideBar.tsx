@@ -17,7 +17,7 @@ const SideBar = (): JSX.Element => {
         onPressOut={() => { setButtonPressed(false) }}
         style={[styles.button, isButtonPressed ? styles.pressablePressed : null]}
       >
-        <AntDesign name="arrowleft" size={18} color="black" />
+        <AntDesign name="menufold" size={18} color="black" />
       </Pressable>
       <View style={styles.navLinks}>
         <SideBarPressable to={'Home'} icon={'home'} />
